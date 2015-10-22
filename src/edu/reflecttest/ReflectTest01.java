@@ -1,5 +1,8 @@
 package edu.reflecttest;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class ReflectTest01 {
 
 	public static void main(String[] args) {
@@ -31,7 +34,14 @@ public class ReflectTest01 {
 		 * every instance is a new object 
 		 * they don't have the same id
 		 */
-		
+		Integer[] a =new Integer[10];
+		int n=0;
+		for(Integer i:a){
+			a[n++]=n;
+			System.out.println(i);
+		}
+		ArrayList<Integer> l = (ArrayList<Integer>) Arrays.asList(a);
+		l.forEach(s->System.out.println(s));
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
